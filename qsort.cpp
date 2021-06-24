@@ -5,16 +5,13 @@ std::vector<int> &myqsort(std::vector<int> &array)
 {
 	if (array.size() < 2)
 		return array;
-	else if (array.size() == 2)
+	else if (array.size() == 2 && array[0] < array[1])
 	{
-		if (array[0] < array[1])
-		{
-			int tmp = array[0];
-			array[0] = array[1];
-			array[1] = tmp;
-		}
+		int tmp = array[0];
+		array[0] = array[1];
+		array[1] = tmp;
 	}
-	else
+	else if (array.size() > 2)
 	{
 		std::vector<int> small_array;
 		std::vector<int> big_array;
